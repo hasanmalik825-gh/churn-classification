@@ -1,7 +1,3 @@
-
-path = 'DataScience/files/'
-
-# Your Streamlit app code here
 import streamlit as st
 import numpy as np
 import tensorflow as tf
@@ -10,13 +6,13 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-model = tf.keras.models.load_model(path+'ann.h5')
+model = tf.keras.models.load_model('ann.h5')
 
 # Load the encoders and scaler
-with open(path+'ohe_encoder.pkl', 'rb') as file:
+with open('ohe_encoder.pkl', 'rb') as file:
     onehot_encoder = pickle.load(file)
 
-with open(path+'std_scaler.pkl', 'rb') as file:
+with open('std_scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
 
